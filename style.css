@@ -1,0 +1,22 @@
+body {
+    background-color: #C5E4E7;
+}
+
+.calculator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.calc-totals-section {
+    background-color: #00474B;
+}
+
+.tip-btn {
+    background-color: #00474B;
+    color: white;
+}
+
+.tip-btn, #tip-btn-group input {
+    flex-shrink: 1;
+}
