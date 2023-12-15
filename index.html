@@ -14,35 +14,36 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-
       <div class="calculator-container d-flex justify-content-center">
-        <div class="card calculator rounded-4 p-4 border-0">
+        <div class="card calculator rounded-4 p-md-4 p-1 border-0">
           <div class="card-body">
             <div class="row">
               <div class="col-md-6 col-12">
                 <div class="calc-inputs-section p-4">
                   <div class="card-label">
                     <h4>Bill</h4>
-                    <input class="w-100 border-0 py-2 rounded-2" type="number" id="billTotal"/>
+                    <div class="bill-total-input">
+                      <input class="w-100 border-0 py-2 rounded-2 text-end pe-4" type="number" id="billTotal" placeholder="0"/>
+                    </div>
                   </div>
                   <div class="card-label tip-percent-buttons my-5">
                     <h4>Select Tip %</h4>
-                    <div id="tip-btn-group">
-                      <div class="row flex-nowrap">
+                    <div id="tip-btn-group" class="d-flex flex-wrap justify-content-center">
+                      <div class="row flex-nowrap w-100">
                         <button class="tip-btn btn" id="5-percent" value="5">5%</button>
                         <button class="tip-btn mx-3 btn" id="10-percent" value="10">10%</button>
                         <button class="tip-btn btn" id="15-percent" value="15">15%</button>
                       </div>
-                      <div class="row flex-nowrap mt-3">
+                      <div class="row flex-nowrap mt-3 w-100">
                         <button class="tip-btn btn" id="25-percent" value="25">25%</button>
                         <button class="tip-btn mx-3 btn" id="50-percent" value="50">50%</button>
                         <input
                           type="number"
                           placeholder="Custom"
-                          class="border-0 py-2 rounded-2"
+                          class="border-0 py-2 rounded-2 text-center"
                           id="customTip"
                         />
                       </div>
@@ -50,12 +51,14 @@
                   </div>
                   <div class="card-label">
                     <h4>Number of People</h4>
-                    <input class="w-100 border-0 py-2 rounded-2" type="number" id="numPeople"/>
+                    <div class="number-people-input">
+                      <input class="w-100 border-0 py-2 rounded-2 text-end pe-4" type="number" id="numPeople" placeholder="0"/>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-12 calc-totals-section rounded-4">
-                <div class="p-4">
+              <div class="col-md-6 col-12 calc-totals-section rounded-4 d-flex flex-wrap align-items-center">
+                <div class="p-4 w-100">
                   <div class="d-flex justify-content-between">
                     <div>
                       <h5 class="text-white mb-0">Tip Amount</h5>
@@ -75,7 +78,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="p-4">
+                <div class="p-4 w-100">
                   <button id="submitBtn" class="w-100 border-0 rounded-3 py-2 text-uppercase fw-bold">Submit</button>
                   <button id="resetBtn" class="w-100 border-0 rounded-3 py-2 text-uppercase fw-bold d-none">Reset</button>
                 </div>
@@ -84,7 +87,7 @@
           </div>
         </div>
       </div>
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
