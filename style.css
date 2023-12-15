@@ -1,22 +1,65 @@
 body {
-    background-color: #C5E4E7;
-}
+    background-color: #c5e4e7;
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Space Mono', monospace;
+  }
 
-.calculator {
+  h4 {
+    font-size: 16px;
+  }
+
+  .tip-btn {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  input {
+    background: #f3f3f3;
+    font-size: 24px;
+    color: #00474B;
+    font-weight: bold;
+  }
+
+  .calc-total {
+    font-size: 48px;
+    color: #26C2AE;
+  }
+  
+  .calculator {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-}
+  }
+  
+  .calc-totals-section {
+    background-color: #00474b;
+  }
 
-.calc-totals-section {
-    background-color: #00474B;
-}
-
-.tip-btn {
-    background-color: #00474B;
+  .calc-totals-section span {
+    color: #7F9D9F;
+  }
+  
+  .tip-btn {
+    background-color: #00474b;
     color: white;
-}
-
-.tip-btn, #tip-btn-group input {
+  }
+  
+  .tip-btn,
+  #tip-btn-group input {
     flex-shrink: 1;
-}
+  }
+
+  .selected {
+    background-color: #26C2AE;
+    color: #00474B;
+  }
+
+  #resetBtn, #submitBtn {
+    background-color: #26C2AE;
+    color: #00474b;
+    font-size: 20px;
+  }
+
+  .selection-warning {
+    border: 1px solid red;
+  }

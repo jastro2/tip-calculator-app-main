@@ -1,76 +1,94 @@
 <!DOCTYPE html>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tip Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style.css" />
   </head>
-  <body>    
-  
-    <div class="calculator-container d-flex justify-content-center">
-      <div class="card calculator rounded-4 p-4">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-6 col-12">
-              <div class="calc-inputs-section p-4">
-                <div class="card-label">
-                  <h4>Bill</h4>
-                  <input class="w-100" type="text">
-                </div>
-                <div class="card-label tip-percent-buttons mt-4">
-                  <h4>Select Tip %</h4>
-                  <div id="tip-btn-group">
-                    <div class="row flex-nowrap">
-                      <a class="tip-btn btn" id="5-percent">5%</a>
-                      <a class="tip-btn mx-3 btn" id="10-percent">10%</a>
-                      <a class="tip-btn btn" id="15-percent">15%</a>
+  <body>
+
+      <div class="calculator-container d-flex justify-content-center">
+        <div class="card calculator rounded-4 p-4 border-0">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <div class="calc-inputs-section p-4">
+                  <div class="card-label">
+                    <h4>Bill</h4>
+                    <input class="w-100 border-0 py-2 rounded-2" type="number" id="billTotal"/>
+                  </div>
+                  <div class="card-label tip-percent-buttons my-5">
+                    <h4>Select Tip %</h4>
+                    <div id="tip-btn-group">
+                      <div class="row flex-nowrap">
+                        <button class="tip-btn btn" id="5-percent" value="5">5%</button>
+                        <button class="tip-btn mx-3 btn" id="10-percent" value="10">10%</button>
+                        <button class="tip-btn btn" id="15-percent" value="15">15%</button>
+                      </div>
+                      <div class="row flex-nowrap mt-3">
+                        <button class="tip-btn btn" id="25-percent" value="25">25%</button>
+                        <button class="tip-btn mx-3 btn" id="50-percent" value="50">50%</button>
+                        <input
+                          type="number"
+                          placeholder="Custom"
+                          class="border-0 py-2 rounded-2"
+                          id="customTip"
+                        />
+                      </div>
                     </div>
-                    <div class="row flex-nowrap mt-3">
-                      <a class="tip-btn btn" id="25-percent">25%</a>
-                      <a class="tip-btn mx-3 btn" id="50-percent">50%</a>
-                      <input type="text" placeholder="Custom">
-                    </div>
                   </div>
-                </div>
-                <div class="card-label mt-4">
-                  <h4>Number of People</h4>
-                  <input class="w-100" type="text">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-12 calc-totals-section rounded-4">
-              <div class="p-4">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <h5 class="text-white mb-0">Tip Amount</h5>
-                    <span>/ person</span>
-                  </div>
-                  <div>
-                    <p class="calc-total" id="tipPerPerson">X</p>
-                  </div>
-                </div>
-                <div class="d-flex justify-content-between mt-3">
-                  <div>
-                    <h5 class="text-white mb-0">Total</h5>
-                    <span>/ person</span>
-                  </div>
-                  <div>
-                    <p class="calc-total" id="totalPerPerson"></p>
+                  <div class="card-label">
+                    <h4>Number of People</h4>
+                    <input class="w-100 border-0 py-2 rounded-2" type="number" id="numPeople"/>
                   </div>
                 </div>
               </div>
-              <div>
-                <button id="resetBtn" class="w-100">Reset</button>
+              <div class="col-md-6 col-12 calc-totals-section rounded-4">
+                <div class="p-4">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h5 class="text-white mb-0">Tip Amount</h5>
+                      <span>/ person</span>
+                    </div>
+                    <div>
+                      <p class="calc-total" id="tipPerPerson">$0.00</p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between mt-3">
+                    <div>
+                      <h5 class="text-white mb-0">Total</h5>
+                      <span>/ person</span>
+                    </div>
+                    <div>
+                      <p class="calc-total" id="totalPerPerson">$0.00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <button id="submitBtn" class="w-100 border-0 rounded-3 py-2 text-uppercase fw-bold">Submit</button>
+                  <button id="resetBtn" class="w-100 border-0 rounded-3 py-2 text-uppercase fw-bold d-none">Reset</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+      </div>
+    <script src="/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
