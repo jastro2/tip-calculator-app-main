@@ -1,65 +1,116 @@
 body {
-    background-color: #c5e4e7;
-    font-family: 'Rubik', sans-serif;
-    font-family: 'Space Mono', monospace;
-  }
+  background-color: #c5e4e7;
+  font-family: 'Rubik', sans-serif;
+  font-family: 'Space Mono', monospace;
+}
 
-  h4 {
-    font-size: 16px;
-  }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
 
-  .tip-btn {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  input {
-    background: #f3f3f3;
-    font-size: 24px;
-    color: #00474B;
-    font-weight: bold;
-  }
+input:focus-visible {
+  outline: solid 2px #26C2AE!important;
+}
 
-  .calc-total {
-    font-size: 48px;
-    color: #26C2AE;
-  }
-  
-  .calculator {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .calc-totals-section {
-    background-color: #00474b;
-  }
+input:hover, button:hover {
+  cursor: pointer;
+}
 
-  .calc-totals-section span {
-    color: #7F9D9F;
-  }
-  
-  .tip-btn {
-    background-color: #00474b;
-    color: white;
-  }
-  
-  .tip-btn,
-  #tip-btn-group input {
-    flex-shrink: 1;
-  }
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5E7A7D;
+}
 
-  .selected {
-    background-color: #26C2AE;
-    color: #00474B;
-  }
+.calculator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  #resetBtn, #submitBtn {
-    background-color: #26C2AE;
-    color: #00474b;
-    font-size: 20px;
-  }
+/* ==== INPUT SECTION ==== */
 
-  .selection-warning {
-    border: 1px solid red;
-  }
+.tip-btn {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.tip-btn:hover, #submitBtn:hover {
+  background-color: #9FE8DF;
+}
+
+input {
+  background-color: #F3F9FA;
+  font-size: 24px;
+  color: #00474B;
+  font-weight: bold;
+}
+
+.tip-btn {
+  background-color: #00474b;
+  color: white;
+}
+
+.tip-btn,
+#tip-btn-group input {
+  flex-shrink: 1;
+}
+
+.calc-inputs-section .card-label, .number-people-input .card-label {
+  position: relative;
+}
+
+.bill-total-input:after {
+  content:'';
+  background: url('/images/icon-dollar.svg') no-repeat;
+  width: 5%;
+  height: 100%;
+  left: 5%;
+  top: 55%;
+  position: absolute;
+}
+
+.number-people-input:after {
+  content:'';
+  background: url('/images/icon-person.svg') no-repeat;
+  width: 5%;
+  height: 100%;
+  left: 5%;
+  top: 55%;
+  position: absolute;
+}
+
+.selected {
+  background-color: #26C2AE;
+  color: #00474B;
+}
+
+/* ==== TOTALS ==== */
+
+.calc-totals-section {
+  background-color: #00474b;
+}
+
+.calc-totals-section span {
+  color: #7F9D9F;
+}
+
+.calc-total {
+  font-size: 48px;
+  color: #26C2AE;
+  font-weight: bold;
+}
+
+#resetBtn, #submitBtn {
+  background-color: #26C2AE;
+  color: #00474b;
+  font-size: 20px;
+}
+
+.selection-warning {
+  border: 1px solid red;
+}
